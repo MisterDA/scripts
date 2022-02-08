@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if command -v ismycomputeron 2>&1 /dev/null; then
+    ISITON=$(ismycomputeron)
+elif command -v ./ismycomputeron 2>&1 /dev/null; then
+    ISITON=$(./ismycomputeron)
+else
+    echo "IMPOSSIBLE TO TELL!!"
+    exit 1
+fi
+
+if [ $ISITON == "YES" ]; then
+    echo 'NO'
+else
+    echo 'YES'
+fi
